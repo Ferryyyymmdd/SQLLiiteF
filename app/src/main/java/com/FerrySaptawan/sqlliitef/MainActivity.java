@@ -11,8 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    EditText username, password, confirmpassword;
-    Button btnsignup, btnhaveaccount;
+    EditText username, password, confirmPassword;
+    Button btnSignup, btnHaveAccount;
 
     DBHelper DB;
 
@@ -23,17 +23,17 @@ public class MainActivity extends AppCompatActivity {
 
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
-        confirmpassword = findViewById(R.id.confirmpassword);
-        btnsignup = findViewById(R.id.signup);
-        btnhaveaccount = findViewById(R.id.haveaccount);
+        confirmPassword = findViewById(R.id.confirmPassword);
+        btnSignup = findViewById(R.id.signup);
+        btnHaveAccount = findViewById(R.id.haveaccount);
         DB = new DBHelper(this);
 
-        btnsignup.setOnClickListener(new View.OnClickListener() {
+        btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String user = username.getText().toString().trim();
                 String pass = password.getText().toString().trim();
-                String repass = confirmpassword.getText().toString().trim();
+                String repass = confirmPassword.getText().toString().trim();
 
                 if (TextUtils.isEmpty(user) || TextUtils.isEmpty(pass) || TextUtils.isEmpty(repass)) {
                     Toast.makeText(MainActivity.this, "Semua Field Wajib Diisi", Toast.LENGTH_SHORT).show();
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                             boolean insert = DB.insertData(user, pass);
                             if (insert) {
                                 Toast.makeText(MainActivity.this, "Registrasi Sukses", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(MainActivity.this, login.class);
+                                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                                 startActivity(intent);
                                 finish();
                             } else {
@@ -60,10 +60,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnhaveaccount.setOnClickListener(new View.OnClickListener() {
+        btnHaveAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, login.class);
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }

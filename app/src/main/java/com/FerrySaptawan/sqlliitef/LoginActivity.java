@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     EditText username, password;
     Button btnSignIn;
@@ -31,19 +31,20 @@ public class login extends AppCompatActivity {
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String user = username.getText().toString();
-                String pass = password.getText().toString();
+                String user = username.getText().toString().trim();
+                String pass = password.getText().toString().trim();
 
                 if (TextUtils.isEmpty(user) || TextUtils.isEmpty(pass)) {
-                    Toast.makeText(login.this, "Semua Field Wajib Diisi", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Semua Field Wajib Diisi", Toast.LENGTH_SHORT).show();
                 } else {
                     boolean checkUserPw = DB.checkUsernamePassword(user, pass);
                     if (checkUserPw) {
-                        Toast.makeText(login.this, "Login Sukses", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(login.this, HomeActivity.class);
+                        Toast.makeText(LoginActivity.this, "Login Sukses", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                         startActivity(intent);
+                        finish();
                     } else {
-                        Toast.makeText(login.this, "Login Gagal. Username atau Password Salah", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Login Gagal. Username atau Password Salah", Toast.LENGTH_SHORT).show();
                     }
                 }
             }

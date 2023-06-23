@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
+    android:background="@drawable/bg2"
     tools:context=".HomeActivity">
+
 
     <TextView
         android:layout_width="match_parent"
@@ -21,9 +23,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clickable="true"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="20dp"
         android:layout_margin="10dp"
-        app:cardBackgroundColor="#665C75">
+        app:cardBackgroundColor="#80FFFFFF">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,37 +35,32 @@
             android:layout_marginHorizontal="20dp">
 
             <ImageView
+                android:id="@+id/imageView"
                 android:layout_width="80dp"
-                android:layout_height="80dp" />
-            <RelativeLayout
+                android:layout_height="80dp"
+                android:background="@drawable/book" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <LinearLayout
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp">
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_centerInParent="true"
-                    android:layout_alignParentLeft="true">
+                    android:text="Perpustakaan Daerah"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Perpustakaan Daerah"
-                        android:textColor="#ffffff"
-                        android:textSize="20sp"
-                        android:layout_marginLeft="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="JL Bersamamu Selamanya"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="JL Bersamamu Selamanya"
-                        android:textColor="#ffffff"
-                        android:textSize="15sp"
-                        android:layout_marginLeft="10dp"/>
-
-                </LinearLayout>
-            </RelativeLayout>
-
+            </LinearLayout>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
@@ -74,28 +71,43 @@
         android:text="Menu Utama"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_horizontal">
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mahasiswa"
-        android:textSize="16sp"
-        android:layout_margin="10dp"
-        android:id="@+id/btnMahasiswa"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Data Buku"
-        android:textSize="16sp"
-        android:layout_margin="10dp"
-        android:id="@+id/btndatabuku"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mahasiswa"
+            android:textSize="16sp"
+            android:layout_margin="10dp"
+            android:id="@+id/btnMahasiswa"
+            android:backgroundTint="#80363636" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data Buku"
+            android:textSize="16sp"
+            android:layout_margin="10dp"
+            android:id="@+id/btndatabuku"
+            android:backgroundTint="#80363636" />
+
     </LinearLayout>
+
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/imageSlider"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        app:iss_auto_cycle="true"
+        app:iss_period="1000"
+        app:iss_delay="1000"
+        app:iss_text_align="CENTER"/>
 
 
 </LinearLayout>
+

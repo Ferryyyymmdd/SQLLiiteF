@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:padding="20dp"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@drawable/bg2"
     tools:context=".MainActivity">
 
   <ImageView
@@ -24,7 +24,7 @@
       android:textSize="25dp"
       android:textStyle="bold"
       android:gravity="center"
-      android:textColor="#f8f7f7"
+      android:textColor="#212021"
       android:layout_marginBottom="10dp"/>
 
   <EditText
@@ -34,7 +34,8 @@
       android:hint="Username"
       android:id="@+id/username"
       android:textSize="20dp"
-      android:textColorHint="#F8F7F7"
+      android:textColorHint="#44454f"
+      android:textColor="#212021"
       android:paddingLeft="20dp"
       android:layout_marginBottom="20dp"/>
 
@@ -45,19 +46,26 @@
       android:hint="Password"
       android:id="@+id/password"
       android:textSize="20dp"
-      android:textColorHint="#F8F7F7"
+      android:textColorHint="#44454f"
+      android:textColor="#ffffff"
       android:paddingLeft="20dp"
       android:layout_marginBottom="20dp"/>
 
-  <androidx.appcompat.widget.AppCompatButton
-      android:background="@drawable/buttonbg"
+  <LinearLayout
       android:layout_width="match_parent"
-      android:layout_height="60dp"
-      android:text="Sign In"
-      android:layout_marginTop="10dp"
-      android:id="@+id/signin"
-      android:textSize="15dp"
-      android:textColor="#fff"
-      android:layout_marginBottom="10dp"/>
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:gravity="left">
 
+  <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/signin"
+      android:layout_width="60pt"
+      android:layout_height="40dp"
+      android:background="@drawable/buttonbg"
+      android:text="Sign In"
+      android:textSize="15sp"
+      android:textColor="#fff"
+      android:layout_marginTop="10dp"
+      android:layout_marginBottom="10dp" />
+  </LinearLayout>
 </LinearLayout>
