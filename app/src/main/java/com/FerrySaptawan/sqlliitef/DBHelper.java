@@ -7,21 +7,24 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper {
-    private static final String DB_NAME = "project.db";
-    private static final int DB_VERSION = 1;
+    private static final String DB_NAME = "projectnew.db";
+    private static final int DB_VERSION = 2;
 
     public DBHelper(Context context) {
+
         super(context, DB_NAME, null, DB_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE users (username TEXT PRIMARY KEY, password TEXT)");
+        sqLiteDatabase.execSQL("CREATE TABLE biodata (nim TEXT PRIMARY KEY, nama TEXT, jeniskelamin TEXT, alamat TEXT, email TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS users");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS biodata");
         onCreate(sqLiteDatabase);
     }
 
@@ -33,9 +36,9 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put("password", password);
 
         long result = db.insert("users", null, values);
-        db.close(); // Tambahkan ini untuk menutup koneksi database
+        db.close();
 
-        return result != -1; // Ubah logika pengembalian nilai
+        return result != -1;
     }
 
     public boolean checkUsername(String username) {
@@ -59,20 +62,64 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public boolean checkUsernamePassword(String username, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(
-                "users",
-                null,
-                "username = ? AND password = ?",
-                new String[]{username, password},
-                null,
-                null,
-                null
-        );
+        Cursor cursor = db.query("users", null, "username = ? AND password = ?",
+                new String[]{username, password}, null, null, null);
 
         boolean exists = cursor.getCount() > 0;
         cursor.close();
         db.close();
 
         return exists;
+    }
+
+    public boolean insertBiodata(String nim, String nama, String jeniskelamin, String alamat, String email) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put("nim", nim);
+        values.put("nama", nama);
+        values.put("jeniskelamin", jeniskelamin);
+        values.put("alamat", alamat);
+        values.put("email", email);
+
+        long result = db.insert("biodata", null, values);
+        db.close();
+
+        return result != -1;
+    }
+
+    public Cursor tampildata() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT * FROM biodata", null);
+    }
+
+    public boolean checknim(String nim) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM biodata WHERE nim=?", new String[]{nim});
+        boolean exists = cursor.getCount() > 0;
+        cursor.close();
+        db.close();
+        return exists;
+    }
+
+    public boolean deleteData(String nim) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        int result = db.delete("biodata", "nim=?", new String[]{nim});
+        db.close();
+        return result > 0;
+    }
+
+    public boolean updateData(String nim, String nama, String jeniskelamin, String alamat, String email) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put("nama", nama);
+        values.put("jeniskelamin", jeniskelamin);
+        values.put("alamat", alamat);
+        values.put("email", email);
+
+        int result = db.update("biodata", values, "nim=?", new String[]{nim});
+        db.close();
+        return result > 0;
     }
 }
