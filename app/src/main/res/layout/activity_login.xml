@@ -47,7 +47,7 @@
       android:id="@+id/password"
       android:textSize="20dp"
       android:textColorHint="#44454f"
-      android:textColor="#ffffff"
+      android:textColor="#212021"
       android:paddingLeft="20dp"
       android:layout_marginBottom="20dp"/>
 

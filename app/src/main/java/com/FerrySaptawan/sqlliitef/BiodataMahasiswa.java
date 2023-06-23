@@ -34,7 +34,7 @@ public class BiodataMahasiswa extends AppCompatActivity {
                 data.append("Nama: ").append(nama).append("\n");
                 data.append("Jenis Kelamin: ").append(jeniskelamin).append("\n");
                 data.append("Alamat: ").append(alamat).append("\n");
-                data.append("Email: ").append(email).append("\n\n");
+                data.append("Email: ").append(email).append("\n\n\n");
             }
             textViewData.setText(data.toString());
         }

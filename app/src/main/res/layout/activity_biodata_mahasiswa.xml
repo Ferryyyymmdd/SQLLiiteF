@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:background="@drawable/bg2"
     tools:context=".BiodataMahasiswa">
 
 
@@ -10,5 +11,7 @@
         android:id="@+id/textViewData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+
         android:textAppearance="?android:attr/textAppearanceLarge" />
 </RelativeLayout>
