@@ -46,11 +46,11 @@ public class HomeActivity extends AppCompatActivity {
 
 
         List<SlideModel> imageList = new ArrayList<>();
-        imageList.add(new SlideModel(R.drawable.image, "Deskripsi Gambar 1", ScaleTypes.FIT));
-        imageList.add(new SlideModel(R.drawable.image2, "Deskripsi Gambar 2", ScaleTypes.FIT));
-        imageList.add(new SlideModel(R.drawable.image3, "Deskripsi Gambar 3", ScaleTypes.FIT));
-        imageList.add(new SlideModel(R.drawable.image4, "Deskripsi Gambar 4", ScaleTypes.FIT));
-        imageList.add(new SlideModel(R.drawable.image5, "Deskripsi Gambar 5", ScaleTypes.FIT));
+        imageList.add(new SlideModel(R.drawable.image, "Starry Night", ScaleTypes.FIT));
+        imageList.add(new SlideModel(R.drawable.image2, "Starry Night Over the Rhone", ScaleTypes.FIT));
+        imageList.add(new SlideModel(R.drawable.image3, "The Potato Eaters", ScaleTypes.FIT));
+        imageList.add(new SlideModel(R.drawable.image4, "De pastorie in Nuenen", ScaleTypes.FIT));
+        imageList.add(new SlideModel(R.drawable.image5, "Wheatfield with a Reaper", ScaleTypes.FIT));
 
         imageSlider.setImageList(imageList);
     }

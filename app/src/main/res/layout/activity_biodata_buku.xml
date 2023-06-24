@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:background="@drawable/bg2"
-    tools:context=".BiodataMahasiswa">
+    tools:context=".BiodataBuku">
 
 
     <TextView
@@ -12,13 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
+        android:layout_marginBottom="10dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
         android:background="@drawable/edittextbg"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="NIM"
+        android:hint="KODE"
         android:id="@+id/hapus"
         android:textSize="20dp"
         android:textColorHint="#44454f"
