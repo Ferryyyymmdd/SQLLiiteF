@@ -29,9 +29,9 @@ public class BiodataMahasiswa extends AppCompatActivity {
         btnhapus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String nobukToDelete = hapus.getText().toString();
+                String nimToDelete = hapus.getText().toString();
 
-                boolean isDeleted = dbHelper.deleteDataBuku(nobukToDelete);
+                boolean isDeleted = dbHelper.deleteData(nimToDelete);
 
                 if (isDeleted) {
                     Toast.makeText(BiodataMahasiswa.this, "Record deleted successfully", Toast.LENGTH_SHORT).show();
