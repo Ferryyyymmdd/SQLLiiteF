@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class LoginActivity extends AppCompatActivity {
 
     EditText username, password;
-    Button btnSignIn;
+    Button btnSignIn, btnRegist, btnsecretchamber;
 
     DBHelper DB;
 
@@ -25,6 +25,8 @@ public class LoginActivity extends AppCompatActivity {
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         btnSignIn = findViewById(R.id.signin);
+        btnRegist = findViewById(R.id.regist);
+        btnsecretchamber =  findViewById(R.id.sc);
 
         DB = new DBHelper(this);
 
@@ -49,5 +51,26 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
+        btnRegist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnsecretchamber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, SecretChamber.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 }
+
+

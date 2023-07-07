@@ -1,5 +1,4 @@
 package com.FerrySaptawan.sqlliitef;
-
 import androidx.appcompat.app.AppCompatActivity;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -41,6 +40,7 @@ public class BiodataMahasiswa extends AppCompatActivity {
                 }
             }
         });
+
 
         Cursor res = dbHelper.tampildata();
         if (res.getCount() == 0) {

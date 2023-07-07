@@ -55,7 +55,8 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
-      android:gravity="left">
+
+      android:gravity="center">
 
   <androidx.appcompat.widget.AppCompatButton
       android:id="@+id/signin"
@@ -66,6 +67,31 @@
       android:textSize="15sp"
       android:textColor="#fff"
       android:layout_marginTop="10dp"
+      android:layout_marginRight="30dp"
       android:layout_marginBottom="10dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/regist"
+        android:layout_width="60pt"
+        android:layout_height="40dp"
+        android:background="@drawable/buttonbg"
+        android:text="Register"
+        android:textSize="15sp"
+        android:textColor="#fff"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+
+
   </LinearLayout>
+
+  <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/sc"
+      android:layout_width="10pt"
+      android:layout_height="10dp"
+      android:layout_marginTop="10dp"
+      android:layout_marginBottom="10dp"
+      android:background="@drawable/buttonbg"
+      android:text=""
+      android:textColor="#fff"
+      android:textSize="15sp" />
 </LinearLayout>

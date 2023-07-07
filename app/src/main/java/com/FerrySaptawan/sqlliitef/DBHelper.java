@@ -135,6 +135,11 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.rawQuery("SELECT * FROM databuku", null);
     }
 
+    public Cursor tampildatauser() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT * FROM users", null);
+    }
+
 
 
     public boolean deleteData(String nim) {
@@ -147,6 +152,13 @@ public class DBHelper extends SQLiteOpenHelper {
     public boolean deleteDataBuku(String kode) {
         SQLiteDatabase db = this.getWritableDatabase();
         int result = db.delete("databuku", "kode=?", new String[]{kode});
+        db.close();
+        return result > 0;
+    }
+
+    public boolean deleteDatauser(String user) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        int result = db.delete("users", "username=?", new String[]{user});
         db.close();
         return result > 0;
     }

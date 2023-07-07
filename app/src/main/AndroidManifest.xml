@@ -12,6 +12,9 @@
         android:theme="@style/Theme.SQLLiiteF"
         tools:targetApi="31">
         <activity
+            android:name=".SecretChamber"
+            android:exported="false" />
+        <activity
             android:name=".BiodataBuku"
             android:exported="false" />
         <activity
