@@ -1,4 +1,5 @@
 package com.FerrySaptawan.sqlliitef;
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.database.Cursor;
 import android.os.Bundle;
